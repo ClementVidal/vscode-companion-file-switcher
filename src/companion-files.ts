@@ -5,7 +5,7 @@ import * as path from 'path';
 
 export interface Companion {
     extension: string;
-    doc: vscode.TextDocument; 
+    doc: vscode.TextDocument;
 }
 
 export class CompanionFiles {
@@ -14,20 +14,19 @@ export class CompanionFiles {
 
     }
 
-    list( doc: vscode.TextDocument ): Array<vscode.TextDocument> {
+    list(doc: vscode.TextDocument): Array<vscode.TextDocument> {
 
-        if( ! doc ) {
+        if (!doc) {
             return null;
         }
 
-        let exts = path.basename( doc.fileName ).split('.');
-        let dir = path.dirname( doc.fileName );
+        let exts = path.basename(doc.fileName).split('.');
+        let dir = path.dirname(doc.fileName);
 
-        dir = dir.replace( vscode.workspace.rootPath+'/', '' );
+        dir = dir.replace(vscode.workspace.rootPath + '/', '');
 
-        let searchPatern =  dir+'/*';
-        vscode.workspace.findFiles(searchPatern, '**/node_modules/**' ).then( (r) => console.log( searchPatern, r ));
+        let searchPatern = dir + '/*';
+        vscode.workspace.findFiles(searchPatern, '**/node_modules/**').then((r) => console.log(searchPatern, r));
         return null
     }
-
 }
