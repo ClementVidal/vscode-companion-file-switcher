@@ -1,6 +1,8 @@
 
 import * as vscode from 'vscode';
 
+import * as path from 'path';
+
 export interface Companion {
     extension: string;
     doc: vscode.TextDocument; 
@@ -18,12 +20,13 @@ export class CompanionFiles {
             return null;
         }
 
-        console.log( doc.fileName );
+        let exts = path.basename( doc.fileName ).split('.');
+        let dir = path.dirname( doc.fileName );
 
-        console.log( doc.fileName.split('.') );
+        dir = dir.replace( vscode.workspace.rootPath+'/', '' );
 
-/*        doc.fileName.split()
-        vscode.workspace.findFiles( )*/
+        let searchPatern =  dir+'/*';
+        vscode.workspace.findFiles(searchPatern, '**/node_modules/**' ).then( (r) => console.log( searchPatern, r ));
         return null
     }
 
