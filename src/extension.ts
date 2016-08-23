@@ -13,16 +13,23 @@ export function activate(context: vscode.ExtensionContext) {
             // Create item list from companions files
             let qpItemList = companionFile.createQuickPickItemList(cs);
 
-            // Pick one
-            vscode.window.showQuickPick(qpItemList).then((i: QuickPickItem) => {
-                // Open doc
-                vscode.workspace.openTextDocument(i.uri.uri).then((d) => {
+            if( qpItemList.length === 0 ) {
+
+                vscode.window.showInformationMessage('No companions file found.');
+            } else {
+
+                // Pick one
+                vscode.window.showQuickPick(qpItemList).then((i: QuickPickItem) => {
+                    // Open doc
+                    vscode.workspace.openTextDocument(i.uri.uri).then((d) => {
+                    }, (r) => {
+                        vscode.window.showErrorMessage('Failed to open companion file.');
+                    });
                 }, (r) => {
-                    vscode.window.showErrorMessage('Failed to open document !');
+                    vscode.window.showErrorMessage('Failed to pick companion file.');
                 });
-            }, (r) => {
-                vscode.window.showErrorMessage('Failed to pick document !');
-            });
+
+            }
 
         }, (r) => {
             vscode.window.showErrorMessage('Failed to list companions document !');
