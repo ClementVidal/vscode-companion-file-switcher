@@ -15,15 +15,17 @@ export function activate(context: vscode.ExtensionContext) {
 
             // Pick one
             vscode.window.showQuickPick(qpItemList).then((i: QuickPickItem) => {
-
                 // Open doc
                 vscode.workspace.openTextDocument(i.uri.uri).then((d) => {
-                    console.log('Open doc !');
                 }, (r) => {
-                    console.log('Rejected: ', r);
+                    vscode.window.showErrorMessage('Failed to open document !');
                 });
+            }, (r) => {
+                vscode.window.showErrorMessage('Failed to pick document !');
             });
 
+        }, (r) => {
+            vscode.window.showErrorMessage('Failed to list companions document !');
         });
     });
 
