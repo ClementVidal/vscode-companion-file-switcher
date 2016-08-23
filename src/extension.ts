@@ -1,20 +1,30 @@
 import * as vscode from 'vscode';
 
-import {CompanionFiles} from './companion-files';
+import {CompanionFiles, QuickPickItem} from './companion-files';
 
 export function activate(context: vscode.ExtensionContext) {
-
-    console.log('Congratulations, your extension "file-switcher" is now active!');
 
     let disposable = vscode.commands.registerCommand('extension.fileSwitcher.switch', () => {
 
         let companionFile = new CompanionFiles();
-        let activeDoc: vscode.TextDocument = undefined;
-        if (vscode.window.activeTextEditor) {
-            activeDoc = vscode.window.activeTextEditor.document;
-        }
-        companionFile.list(activeDoc);
-        vscode.window.showInformationMessage('Hello World!');
+
+        companionFile.list().then((cs: Array<vscode.Uri>) => {
+
+            // Create item list from companions files
+            let qpItemList = companionFile.createQuickPickItemList(cs);
+
+            // Pick one
+            vscode.window.showQuickPick(qpItemList).then((i: QuickPickItem) => {
+
+                // Open doc
+                vscode.workspace.openTextDocument(i.uri.uri).then((d) => {
+                    console.log('Open doc !');
+                }, (r) => {
+                    console.log('Rejected: ', r);
+                });
+            });
+
+        });
     });
 
     context.subscriptions.push(disposable);
