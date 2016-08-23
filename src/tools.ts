@@ -37,5 +37,5 @@ export let getCompanionNameMap = function (): any {
         'component.html': 'Component view',
         'component.scss': 'Component style',
     };
-    return vscode.workspace.getConfiguration().get('companionSwitcher.companionName', d);
+    return vscode.workspace.getConfiguration().get('companionFileSwitcher.friendlyName', d);
 }
