@@ -4,6 +4,7 @@
     "description": "Switch accross companion files",
     "version": "0.0.1",
     "publisher": "ClementVidal",
+    "license": "MIT",
     "engines": {
         "vscode": "^1.0.0"
     },
