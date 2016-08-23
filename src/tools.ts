@@ -32,7 +32,8 @@ export let getCompanionNameMap = function (): any {
         'pipe.ts': 'Pipe',
         'test.ts': 'Test',
         'directive.ts': 'Directive',
-        'route.ts': 'Route',
+        'routes.ts': 'Routes',
+        'guard.ts': 'Guard',
         'component.html': 'Component view',
         'component.scss': 'Component style',
     };
