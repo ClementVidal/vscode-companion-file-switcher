@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 
-import {getUriExtensions} from './tools';
+import {getUriExtensions, getCompanionNameMap} from './tools';
 
 export class QuickPickItem implements vscode.QuickPickItem {
 
@@ -9,7 +9,7 @@ export class QuickPickItem implements vscode.QuickPickItem {
 
     constructor(public uri: vscode.Uri) {
         let exts = getUriExtensions(uri);
-        this.friendlyName = this.matchFriendlyName(exts);
+        this.friendlyName = this.matchCompanionName(exts);
     }
 
     get label() {
@@ -27,13 +27,8 @@ export class QuickPickItem implements vscode.QuickPickItem {
         return null;
     }
 
-    matchFriendlyName(ext: string) {
-        let map = {
-            'component.ts': 'Code',
-            'component.html': 'View',
-            'component.scss': 'Style',
-        }
-
+    matchCompanionName(ext: string) {
+        let map = getCompanionNameMap();
         return map[ext];
     }
 }

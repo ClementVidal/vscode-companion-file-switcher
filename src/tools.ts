@@ -24,3 +24,17 @@ export let getUriDirectory = function (uri: vscode.Uri): string {
     dir = dir.replace(root, '');
     return dir;
 }
+
+export let getCompanionNameMap = function (): any {
+    let d = {
+        'component.ts': 'Component',
+        'service.ts': 'Service',
+        'pipe.ts': 'Pipe',
+        'test.ts': 'Test',
+        'directive.ts': 'Directive',
+        'route.ts': 'Route',
+        'component.html': 'Component view',
+        'component.scss': 'Component style',
+    };
+    return vscode.workspace.getConfiguration().get('companionSwitcher.companionName', d);
+}

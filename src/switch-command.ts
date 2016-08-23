@@ -13,7 +13,6 @@ export let switchCommand = function () {
         let qpItemList = createQuickPickItemList(cs);
 
         if (qpItemList.length === 0) {
-
             vscode.window.showInformationMessage('No companions file found.');
         } else {
 
@@ -21,9 +20,8 @@ export let switchCommand = function () {
             vscode.window.showQuickPick(qpItemList).then((pickedItem: QuickPickItem) => {
                 // Open doc
                 vscode.workspace.openTextDocument(pickedItem.uri).then((document: vscode.TextDocument) => {
-                    const active_view_column = vscode.window.activeTextEditor.viewColumn;
-
                     // Show a text document to the active view column
+                    const active_view_column = vscode.window.activeTextEditor.viewColumn;
                     vscode.window.showTextDocument(document, active_view_column).then(
                         document => {
                         },
