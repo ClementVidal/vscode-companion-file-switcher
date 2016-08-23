@@ -2,7 +2,7 @@
     "name": "companion-file-switcher",
     "displayName": "Companion file switcher",
     "description": "Switch accross companion files",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "publisher": "ClementVidal",
     "license": "MIT",
     "engines": {
@@ -42,7 +42,14 @@
                     "description": "Companion file switcher: map an extension to it's friendly name"
                 }
             }
-        }
+        },
+        "keybindings": [
+            {
+                "command": "extension.companionFileSwitcher.switch",
+                "key": "ctrl+shift+c ctrl+shift+f",
+                "when": "editorTextFocus"
+            }
+        ]
     },
     "icon": "images/icon.png",
     "repository": {

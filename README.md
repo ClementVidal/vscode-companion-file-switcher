@@ -22,6 +22,16 @@ You can associate a user friendly name to each companion type:
 When called, a list of companion files of the active document will popup,
 listing every companion with their friendly name if any. 
 
+## Keybindings
+
+Activating this extension can be done by binding the following command:
+
+```
+"command": "extension.companionFileSwitcher.switch"
+```
+
+By default this command is binded to **ctrl+shift+c ctrl+shift+f**
+
 ## Extension Settings
 
 This extension use the following settings:
@@ -45,7 +55,7 @@ If not specified, the default value is:
 
 ## Release Notes
 
-### 0.1.1
+### 0.1.2
 
 Initial release
 
