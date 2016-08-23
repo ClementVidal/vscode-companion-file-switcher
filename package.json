@@ -41,6 +41,7 @@
                     "description": "Companion file switcher: map an extension to it's friendly name"
                 }
             }
+        }
     },
     "icon": "images/icon.png",
     "repository": {
