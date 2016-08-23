@@ -2,7 +2,7 @@
     "name": "companion-file-switcher",
     "displayName": "Companion file switcher",
     "description": "Switch accross companion files",
-    "version": "0.0.1",
+    "version": "0.1.1",
     "publisher": "ClementVidal",
     "license": "MIT",
     "engines": {
