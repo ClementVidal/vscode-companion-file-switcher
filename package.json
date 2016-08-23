@@ -42,7 +42,14 @@
                     "description": "Companion file switcher: map an extension to it's friendly name"
                 }
             }
-        }
+        },
+        "keybindings": [
+            {
+                "command": "extension.companionFileSwitcher.switch",
+                "key": "ctrl+shift+c ctrl+shift+f",
+                "when": "editorTextFocus"
+            }
+        ]
     },
     "icon": "images/icon.png",
     "repository": {
