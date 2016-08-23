@@ -1,7 +1,7 @@
 {
-    "name": "file-switcher",
-    "displayName": "file-switcher",
-    "description": "Switch accross file based on their extensions",
+    "name": "companion-file-switcher",
+    "displayName": "companion-file-switcher",
+    "description": "Switch accross companion files",
     "version": "0.0.1",
     "publisher": "ClementVidal",
     "engines": {
@@ -11,12 +11,12 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.fileSwitcher.switch"
+        "onCommand:extension.companionFileSwitcher.switch"
     ],
     "main": "./out/src/extension",
     "contributes": {
         "commands": [{
-            "command": "extension.fileSwitcher.switch",
+            "command": "extension.companionFileSwitcher.switch",
             "title": "Switch"
         }]
     },

@@ -4,7 +4,7 @@ import {switchCommand} from './switch-command';
 
 export function activate(context: vscode.ExtensionContext) {
 
-    let disposable = vscode.commands.registerCommand('extension.fileSwitcher.switch', () => {
+    let disposable = vscode.commands.registerCommand('extension.companionFileSwitcher.switch', () => {
         switchCommand();
     });
 
