@@ -15,10 +15,37 @@
     ],
     "main": "./out/src/extension",
     "contributes": {
-        "commands": [{
-            "command": "extension.companionFileSwitcher.switch",
-            "title": "Switch"
-        }]
+        "commands": [
+            {
+                "command": "extension.companionFileSwitcher.switch",
+                "title": "Switch"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Companion file switcher configuration",
+            "properties": {
+                "companionFileSwitcher.friendlyName": {
+                    "type": "object",
+                    "default": {
+                        "component.ts": "Component",
+                        "service.ts": "Service",
+                        "pipe.ts": "Pipe",
+                        "test.ts": "Test",
+                        "directive.ts": "Directive",
+                        "routes.ts": "Routes",
+                        "guard.ts": "Guard",
+                        "component.html": "Component view",
+                        "component.scss": "Component style"
+                    },
+                    "description": "Companion file switcher: map an extension to it's friendly name"
+                }
+            }
+    },
+    "icon": "images/icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ClementVidal/vscode-companion-file-switcher"
     },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
