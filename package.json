@@ -2,7 +2,7 @@
     "name": "companion-file-switcher",
     "displayName": "Companion file switcher",
     "description": "Switch accross companion files",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "publisher": "ClementVidal",
     "license": "MIT",
     "engines": {
@@ -57,9 +57,9 @@
         "type": "git",
         "url": "https://github.com/ClementVidal/vscode-companion-file-switcher"
     },
-	"bugs": {
-		"url": "https://github.com/ClementVidal/vscode-companion-file-switcher/issues"
-	},
+    "bugs": {
+        "url": "https://github.com/ClementVidal/vscode-companion-file-switcher/issues"
+    },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
         "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
