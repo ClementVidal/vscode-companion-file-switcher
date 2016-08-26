@@ -34,10 +34,11 @@
                         "pipe.ts": "Pipe",
                         "test.ts": "Test",
                         "directive.ts": "Directive",
-                        "routes.ts": "Routes",
+                        "routing.ts": "Routes",
                         "guard.ts": "Guard",
                         "component.html": "Component view",
-                        "component.scss": "Component style"
+                        "component.scss": "Component style",
+                        "component.spec": "Component Spec"
                     },
                     "description": "Companion file switcher: map an extension to it's friendly name"
                 }
@@ -56,6 +57,9 @@
         "type": "git",
         "url": "https://github.com/ClementVidal/vscode-companion-file-switcher"
     },
+	"bugs": {
+		"url": "https://github.com/ClementVidal/vscode-companion-file-switcher/issues"
+	},
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
         "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",

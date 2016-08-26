@@ -2,6 +2,10 @@
 
 This VSCode extension let you easily switch between **companion files**.
 
+
+![Commands](images/screenshoot1.png)
+
+
 ## Features
 Companion files share the same name, but use different extensions:
 - my-component.**component.ts**
@@ -55,7 +59,7 @@ If not specified, the default value is:
 
 ## Release Notes
 
-### 0.1.2
+### 0.1.3
 
 Initial release
 
