@@ -17,7 +17,7 @@ export let getUriDirectory = function (uri: vscode.Uri): string {
     let dir = path.dirname(uri.fsPath);
     let root = vscode.workspace.rootPath;
     if (!root.endsWith('/')) {
-        root = root + '/';
+        root = path.normalize(root + '/');
     }
 
     // Remove root directory
