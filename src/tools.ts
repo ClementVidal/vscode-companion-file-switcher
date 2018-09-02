@@ -14,12 +14,9 @@ export let getUriName = function (uri: vscode.Uri): string {
 }
 
 export let getUriDirectory = function (uri: vscode.Uri): string {
-    let dir = path.dirname(uri.fsPath);
-    let root = vscode.workspace.rootPath;
-    if (!root.endsWith('/')) {
-        root = path.normalize(root + '/');
-    }
-
+    let dir = path.normalize( path.dirname(uri.fsPath) + '/' );
+    let root = path.normalize( vscode.workspace.rootPath + '/');
+    
     // Remove root directory
     dir = dir.replace(root, '');
     return dir;

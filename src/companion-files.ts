@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 
-import {getUriName, getUriDirectory} from './tools';
+import { getUriName, getUriDirectory } from './tools';
 
 
 export class CompanionFiles {
@@ -22,11 +22,13 @@ export class CompanionFiles {
                     return reject('No active document found');
                 }
 
-                let searchPatern = getUriDirectory(doc.uri) + '/*';
+                let uriDir = getUriDirectory(doc.uri);
+                let searchPatern = '*';
+                if (uriDir.length)
+                    searchPatern = path.normalize( uriDir + '/*' );
                 vscode.workspace.findFiles(searchPatern, '**/node_modules/**').then(
                     (r: Array<vscode.Uri>) => {
-                        let c = this.matchCompanion(doc.uri, r);
-                        return resolve(c);
+                        return resolve(this.matchCompanion(doc.uri, r));
                     },
                     reason => {
                         return reject('Failed to find companions files');
