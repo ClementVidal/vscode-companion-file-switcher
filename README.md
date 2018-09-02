@@ -56,13 +56,3 @@ If not specified, the default value is:
     'component.scss': 'Component style',
 }
 ``` 
-
-## Release Notes
-
-### 0.1.3
-
-Initial release
-
------------------------------------------------------------------------------------------------------------
-
-**Enjoy!**
